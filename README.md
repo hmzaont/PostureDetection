@@ -40,7 +40,18 @@ PostureDetection™, yapay zeka ve yüz tanıma teknolojilerini kullanarak oturm
 
 1. Gerekli bağımlılıkları yükleyin:
    ```sh
-   pip install -r requirements.txt
+   pip install 
+   opencv-python
+   dlib
+   Pillow
+   tk
+   numpy
+   math
+   subprocess
+   threading
+   webbrowser
+   random
+   datetime
    ```
 
 2. `shape_predictor_68_face_landmarks.dat` dosyasını [buradan](http://dlib.net/files/shape_predictor_68_face_landmarks.dat.bz2) indirip proje klasörüne ekleyin.
