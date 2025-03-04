@@ -20,6 +20,8 @@ not_sitting_properly_duration = 0
 timer_running = False
 reports = []
 
+def open_github(event):
+    webbrowser.open("https://github.com/hmzaont")
 
 def calculate_head_angle(landmarks):
     nose = landmarks[33]
@@ -166,9 +168,10 @@ def show_report():
     report_text.config(state="disabled")
 
     # Footer
-    footer = Label(report_window, text="© 2025 PostureDetection™ All Rights Reserved.", font=("Helvetica", 12), bg="#343a40", fg="white", pady=10)
+    footer = Label(report_window, text="© 2025 Hamza ONAT  |  PostureDetection™.  All Rights Reserved.", font=("Helvetica", 12), bg="#343a40", fg="white", pady=10)
     footer.pack(fill="x")
-
+    footer.bind("<Button-1>", open_github)
+    
 def process_camera_stream(camera_label, status_label, gif_label, explanation_label, gif_frames):
     global baseline_angle, baseline_distance, running, not_sitting_properly_duration, timer_running
 
@@ -273,9 +276,10 @@ def open_camera_window():
     status_label.place(x=10, y=10)
 
     # Alt bilgi yazısı
-    info_label = Label(camera_window, text="© 2025 PostureDetection™ All Rights Reserved.",
+    info_label = Label(camera_window, text="© 2025 Hamza ONAT  |  PostureDetection™.  All Rights Reserved.",
                        font=("Helvetica", 12), fg="gray", bg="black", cursor="hand2")
     info_label.pack(side="bottom", pady=5)
+    info_label.bind("<Button-1>", open_github)
 
     # Sağ alt köşedeki GIF
     posture_gif = Image.open("posture_animation.gif")
